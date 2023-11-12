@@ -1,7 +1,4 @@
 # SISTEMA FIFA DE CADASTRO
-
-#sistema deve ser possivel cadastrar times jogadores e comissao tecnica
-
 class Times :
     def __init__(self,nometime,cidadetime,mascotetime):
         self.nometime = nometime
@@ -26,8 +23,7 @@ class Tecnico(Comissao):
 
     def dar_coletiva(self):
         return f'O técnico está dando uma coletiva de imprensa'
-
-
+        
 class Auxiliar(Comissao):
     def __init__(self, nome, time, esquematx):
         super().__init__(nome, time)
@@ -46,9 +42,6 @@ class Preparador(Comissao):
     def dar_coletiva(self):
         return 'O preparador está dando uma coletiva de imprensa '
 
-#menu de escolha de cadastro de jogador time ou comissao tecnica
-
-# cadastro do time deve ter nome, cidade do time , e o mascote
 while True:
     escolha = int(input('Bem vindo ao menu fifa ! \n'
                     '1 - Cadastrar novo time .\n'
@@ -61,14 +54,12 @@ while True:
         mascotetime = input("Qual o mascote do time ? ")
         times = Times(f"{nometime}",f'{cidadetime}',f'{mascotetime}')
 
-# jogadores deve conter nome , nome do time ao qual atua, e numero da camisa
     elif escolha == 2:
         nomejogador = input('Qual nome do jogador ? ')
         nometimejoga = input('Qual o time que o jogador atua ? ')
         numerocamisa = input('Qual numero do jogador ?')
         nomejogador1 = Jogadores(f"{nomejogador}",{numerocamisa},f'{nometimejoga}')
         
-# comissao tecnica , deve conter o tecnico , o auxiliar e o preparador
     elif escolha == 3:
         
         while True:
